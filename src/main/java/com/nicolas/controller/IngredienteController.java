@@ -1,6 +1,7 @@
 package com.nicolas.controller;
 
 import com.nicolas.model.entity.Ingrediente;
+//import com.nicolas.service.IngredienteService;
 import com.nicolas.service.IngredienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

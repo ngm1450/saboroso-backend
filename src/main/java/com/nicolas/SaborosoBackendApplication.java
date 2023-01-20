@@ -7,9 +7,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+@EnableJpaRepositories
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@EntityScan(basePackages = "com.nicolas.*")
-@EnableJpaRepositories(basePackages = "com.nicolas.repository")
 public class SaborosoBackendApplication {
 
 	public static void main(String[] args) {

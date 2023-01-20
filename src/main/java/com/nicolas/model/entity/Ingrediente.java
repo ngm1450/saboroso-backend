@@ -4,6 +4,7 @@ import com.nicolas.base.BaseEntity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "ingrediente", schema = "core")
 public class Ingrediente extends BaseEntity<Long> {
 
     @Column(name = "nome", nullable = false, unique = true)
