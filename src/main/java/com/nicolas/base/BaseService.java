@@ -24,8 +24,6 @@ public interface BaseService<T, ID> {
     @Transactional(propagation = Propagation.REQUIRED)
     default T update(T entity) { return getRepository().save(entity); }
 
-    default JpaRepository<T, ID> getRepository() {
-        throw new UnsupportedOperationException();
-    }
+    JpaRepository<T, ID> getRepository();
 
 }
