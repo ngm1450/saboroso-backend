@@ -2,7 +2,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <property dbms="postgresql" name="DB_PASSWORD" value="pwd_single"/>
     <changeSet id="20230119" author="Nicolas Mantzos" runOnChange="true">
         <sql dbms="postgresql">
             create schema if not exists core;
