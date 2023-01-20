@@ -2,15 +2,11 @@ package com.nicolas.base;
 
 import jakarta.persistence.*;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 @MappedSuperclass
-public abstract class BaseEntity<T extends Serializable> implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = 1L;
+public class BaseEntity<T extends Serializable> {
 
     @Id
     @Column(name = "id")
