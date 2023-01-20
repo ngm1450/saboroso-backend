@@ -13,12 +13,12 @@ public class Lanche extends BaseEntity<Long> {
     @Column(name = "nome", nullable = false, unique = true)
     private String nome;
 
-    @Column(name = "preco", nullable = false)
-    private Double preco;
-
     @JsonManagedReference
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "lanche", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<IngredienteLanche> ingredientes;
+
+    @Transient
+    private Double preco;
 
     public String getNome() { return nome; }
 

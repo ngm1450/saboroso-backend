@@ -1,0 +1,22 @@
+version: '3'
+
+networks:
+  saboroso-network:
+    name: saboroso-network
+    driver: bridge
+
+services:
+  saboroso-postgres:
+    image: postgres:12
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      TZ: "America/Fortaleza"
+      POSTGRES_DB: "saboroso"
+      POSTGRES_USER: "user_db_saboroso"
+      POSTGRES_PASSWORD: "password_db_saboroso"
+    volumes:
+      - ~/.saboroso/postgresql/data:/var/lib/postgresql/data
+    networks:
+      - saboroso-network

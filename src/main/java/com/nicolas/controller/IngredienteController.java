@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -25,11 +24,6 @@ public class IngredienteController {
 
     @GetMapping
     public @ResponseBody List<Ingrediente> hello() {
-        List<Ingrediente> dummyIngredientes = new ArrayList<>();
-        Ingrediente ingrediente = new Ingrediente();
-        ingrediente.setNome("Alface");
-        ingrediente.setPreco(0.4);
-        dummyIngredientes.add(ingrediente);
-        return dummyIngredientes;
+        return ingredienteService.getRepository().findAll();
     }
 }

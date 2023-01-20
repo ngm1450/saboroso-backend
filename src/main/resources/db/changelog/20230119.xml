@@ -1,0 +1,57 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <property dbms="postgresql" name="DB_PASSWORD" value="pwd_single"/>
+    <changeSet id="20230119" author="Nicolas Mantzos" runOnChange="true">
+        <sql dbms="postgresql">
+            create schema if not exists core;
+            create schema if not exists settings;
+            create schema if not exists keycloak;
+        </sql>
+
+        <createTable tableName="lanche" schemaName="core">
+            <column name="id" type="bigserial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_lanche"/>
+            </column>
+            <column name="nome" type="varchar(200)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <createTable tableName="ingrediente" schemaName="core">
+            <column name="id" type="bigserial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_ingrediente"/>
+            </column>
+            <column name="nome" type="varchar(200)">
+                <constraints nullable="false" />
+            </column>
+            <column name="preco" type="float8">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <createTable tableName="ingrediente_lanche" schemaName="core">
+            <column name="id" type="bigserial">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_ingrediente_lanche"/>
+            </column>
+            <column name="id_lanche" type="int8">
+                <constraints
+                    nullable="false"
+                    referencedTableName="lanche"
+                    referencedTableSchemaName="core"
+                    referencedColumnNames="id"
+                    foreignKeyName="fk_ingrediente_lanche_lanche" />
+            </column>
+            <column name="id_ingrediente" type="int8">
+                <constraints
+                    nullable="false"
+                    referencedTableName="ingrediente"
+                    referencedTableSchemaName="core"
+                    referencedColumnNames="id"
+                    foreignKeyName="fk_ingrediente_lanche_ingrediente" />
+            </column>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>

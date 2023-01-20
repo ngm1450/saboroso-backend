@@ -5,7 +5,7 @@ import com.nicolas.base.BaseEntity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(schema = "core", name = "credor_assinatura_adicional_plataforma")
+@Table(schema = "core", name = "ingrediente_lanche")
 public class IngredienteLanche extends BaseEntity<Long> {
 
     @ManyToOne(fetch = FetchType.LAZY)
