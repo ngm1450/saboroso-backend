@@ -49,4 +49,4 @@ Enfim, execute o projeto:
 mvn spring-boot:run
 ```
 
-(Obs: Manipualação do maven e execução podem ser facilitadas ao se utilizar uma IDE como IntelliJ ou Eclipse.)
+(Obs: Manipualação do maven e execução podem ser facilitadas ao se utilizar IDEs como IntelliJ ou Eclipse.)
