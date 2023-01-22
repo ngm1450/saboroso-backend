@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/saboroso}
+    username: ${DB_USER:user_db_saboroso}
+    password: ${DB_PASSWORD:password_db_saboroso}
+    driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
+  jpa:
+    show-sql: ${JPA_SHOW_SQL:true}
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO:validate}
+  sql:
+    init:
+      platform: postgres
+  liquibase:
+    enabled: true
+    user: user_db_saboroso
+    password: password_db_saboroso
+    change-log: classpath:db/changelog/changelog-master.xml
+    default-schema: core
+    liquibase-schema: public
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+swagger:
+  enable: true
