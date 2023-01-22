@@ -20,7 +20,7 @@ o usuário possa operar sobre elas seguindo regras de negócio estabelecidas <a 
 
 <img src="database_diagram.png" alt="Diagrama Lógico de Dados - O Saboroso">
 
-Como se pode deduzir da especificação, há um relacionamento ```m:n``` entre as entidades
+Como se pode deduzir da <a href="sobre_o_saboroso.pdf">especificação</a>, há um relacionamento ```m:n``` entre as entidades
 *Ingrediente* e *Lanche*; representado aqui pela tabela ```core.ingrediente_lanche```.
 
 ## Como rodar
