@@ -1,0 +1,56 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="20230122_1254" author="Nicolas Mantzos" runOnChange="false">
+        <sql dbms="postgresql">
+            <![CDATA[
+
+            alter table core.ingrediente add constraint val_minim_preco check (preco > 0);
+            alter table core.ingrediente_lanche add constraint val_qtd_ingrediente check (qtd_ingrediente > 0);
+
+            INSERT INTO core.ingrediente(nome, preco) values ('Mostarda', 2.3),
+                                                             ('Ketchup', 0.21),
+                                                             ('Cebola', 0.12),
+                                                             ('Alface', 0.47),
+                                                             ('Bacon', 0.31),
+                                                             ('Picles', 0.21),
+                                                             ('Maionese', 0.11),
+                                                             ('Molho Shoyu', 0.53),
+                                                             ('Alface Americana', 0.10),
+                                                             ('Gergelim', 0.5),
+                                                             ('Queijo Cheddar', 0.17),
+                                                             ('Tomate', 1.2);
+
+            INSERT INTO core.lanche(nome) values ('Big Mac'),
+                                                 ('X-Burger'),
+                                                 ('X-Bacon'),
+                                                 ('X-Egg'),
+                                                 ('X-Maquina'),
+                                                 ('Duplo Quarteirão'),
+                                                 ('Quarteirão com Queijo'),
+                                                 ('McNífico Bacon'),
+                                                 ('Duplo Cheddar McMelt'),
+                                                 ('Duplo Burguer com Queijo'),
+                                                 ('McFiesta'),
+                                                 ('Hamburtrix'),
+                                                 ('Gandalf'),
+                                                 ('Carminha Burger');
+
+                insert into core.ingrediente_lanche (id_lanche, id_ingrediente, qtd_ingrediente)
+                select id_lanche, id_ingrediente, random()*(5-1)+1
+                from
+                    (
+                        select
+                            i.id as id_ingrediente,
+                            l.id as id_lanche,
+                            row_number() over (order by random()) as rn,
+                            count(*) over () as cnt
+                        from core.ingrediente i cross join core.lanche l
+                    ) randomized
+                where rn <= cnt / 10;
+
+            ]]>
+        </sql>
+    </changeSet>
+</databaseChangeLog>
