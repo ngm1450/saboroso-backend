@@ -3,7 +3,7 @@
 O objetivo deste projeto é criar um MVP da aplicação utilizada para gerenciar o fictício restaurante "O Saboroso".
 
 Atualmente, o foco está em estabelecer as bases de sua infraestutura e desenvolver um CRUD das entidades <i>Ingrediente</i> e <i>Lanche</i>; de modo que
-o usuário possa operar sobre elas seguindo regras de negócio estabelecidas <a href="sobre_o_saboroso.pdf">aqui</a>.
+o usuário possa operar sobre elas seguindo regras de negócio estabelecidas <a href="especificacao.pdf">aqui</a>.
 
 
 ## Principais Tecnologias Utilizadas
@@ -20,7 +20,7 @@ o usuário possa operar sobre elas seguindo regras de negócio estabelecidas <a 
 
 <img src="database_diagram.png" alt="Diagrama Lógico de Dados - O Saboroso">
 
-Como se pode deduzir da <a href="sobre_o_saboroso.pdf">especificação</a>, há um relacionamento ```m:n``` entre as entidades
+Como se pode deduzir da <a href="especificacao.pdf">especificação</a>, há um relacionamento ```m:n``` entre as entidades
 *Ingrediente* e *Lanche*; representado aqui pela tabela ```core.ingrediente_lanche```.
 
 ## Como rodar
