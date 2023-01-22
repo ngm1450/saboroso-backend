@@ -1,0 +1,33 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="20230121_2207" author="Nicolas Mantzos" runOnChange="false">
+
+        <addColumn tableName="ingrediente_lanche" schemaName="core">
+            <column name="qtd_ingrediente" type="int4" defaultValue="1">
+                <constraints nullable="false" />
+            </column>
+        </addColumn>
+
+        <addUniqueConstraint
+            tableName="ingrediente"
+            schemaName="core"
+            columnNames="nome">
+        </addUniqueConstraint>
+
+        <addUniqueConstraint
+                tableName="lanche"
+                schemaName="core"
+                columnNames="nome">
+        </addUniqueConstraint>
+
+        <addUniqueConstraint
+                tableName="ingrediente_lanche"
+                schemaName="core"
+                columnNames="id_lanche,id_ingrediente">
+        </addUniqueConstraint>
+
+
+    </changeSet>
+</databaseChangeLog>

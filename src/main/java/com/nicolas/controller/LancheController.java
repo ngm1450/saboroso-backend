@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/lanches")
+@RequestMapping("/lanches")
 public class LancheController implements BaseController<Lanche, Long> {
 
     private final LancheService lancheService;

@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5433/saboroso}
@@ -6,7 +9,6 @@ spring:
     driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
   jpa:
     show-sql: ${JPA_SHOW_SQL:true}
-    open-in-view: false
     hibernate:
       ddl-auto: ${JPA_DDL_AUTO:validate}
   sql:
@@ -19,5 +21,9 @@ spring:
     change-log: classpath:db/changelog/changelog-master.xml
     default-schema: core
     liquibase-schema: public
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
-
+swagger:
+  enable: true

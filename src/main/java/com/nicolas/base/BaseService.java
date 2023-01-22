@@ -14,9 +14,10 @@ public interface BaseService<T, ID> {
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
-    default T findById(ID id) {
-        return getRepository().findById(id).orElseThrow();
-    }
+    default List<T> findAllById(Iterable<ID> ids) { return getRepository().findAllById(ids); }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    default T findById(ID id) { return getRepository().findById(id).orElseThrow(null); }
 
     @Transactional(propagation = Propagation.REQUIRED)
     default T save(T entity) { return getRepository().save(entity); }

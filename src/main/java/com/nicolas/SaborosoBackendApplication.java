@@ -23,29 +23,6 @@ public class SaborosoBackendApplication {
 
 		ConfigurableApplicationContext ctx = SpringApplication.run(SaborosoBackendApplication.class, args);
 
-		try {
-			Environment env = ctx.getEnvironment();
-			LOG.info("\n\n *** \n\n"
-							+ "\tSABOROSO - BACKEND iniciado com sucesso!\n"
-							+ "\tDisponivel nos enderecos:\n"
-							+ "\tLocal: http://localhost:{}{}\n"
-							+ "\tSwagger Url: http://localhost:{}{}/swagger-ui.html\n"
-							+ "\tActuator: http://localhost:{}{}/actuator\n"
-							+ "\n *** \n\n",
-					env.getProperty("server.port"),
-					env.getProperty("server.servlet.context-path"),
-
-					InetAddress.getLocalHost().getHostAddress(),
-					env.getProperty("server.port"),
-					env.getProperty("server.servlet.context-path"),
-
-					env.getProperty("server.port"),
-					env.getProperty("server.servlet.context-path"));
-
-		} catch (UnknownHostException e) {
-			LOG.error("Falha ao executar aplicacao: {}", e);
-			ctx.close();
-		}
 	}
 
 }
