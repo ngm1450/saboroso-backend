@@ -7,14 +7,14 @@ o usuário possa operar sobre elas seguindo regras de negócio estabelecidas <a 
 
 
 ## Principais Tecnologias Utilizadas
-| Tecnologia                                     | Objetivo                                                                                                                                                             | Localização/Configuração               |   |   |
-|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|---|---|
-| Git                                            | Realizar o controle de versão utilizando o <a href="https://medium.com/trainingcenter/utilizando-o-fluxo-git-flow-e63d5e0d5e04">git flow</a> como fluxo de trabalho. | -                                      |   |   |
-| Java 8                                         | Ser a linguagem principal de escrita do backend (classes, métodos, interfaces, manipulação de estruturas de dados etc)                                               | -                                      |   |   |
-| Ecossistema Spring - Data JPA, Boot e Security | Gerenciar transações, facilitar o mapeamento ORM e esabelecer a segurança.                                                                                           | -                                      |   |   |
-| Maven                                          | Realizar o gerenciamento de dependências.                                                                                                                            | -                                      |   |   |
-| Liquibase                                      | Gerenciar mudanças no banco de dados, destacando quais colunas, tabelas, views, restriçoes etc foram removidas, alteradas ou adicionadas.                            | ``` src/main/resources/db/changelog``` |   |   |
-| Docker                                         | Virtualizar o contêiner do banco de dados PostgreSQL.                                                                                                                | ``` docker-compose.yml```              |   |   |
+| Tecnologia                                     | Objetivo                                                                                                                                                             | Localização/Configuração              | 
+|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| Git                                            | Realizar o controle de versão utilizando o <a href="https://medium.com/trainingcenter/utilizando-o-fluxo-git-flow-e63d5e0d5e04">git flow</a> como fluxo de trabalho. | -                                     |
+| Java 8                                         | Ser a linguagem principal de escrita do backend (classes, métodos, interfaces, manipulação de estruturas de dados etc)                                               | -                                     | 
+| Ecossistema Spring - Data JPA, Boot e Security | Gerenciar transações, facilitar o mapeamento ORM e esabelecer a segurança.                                                                                           | -                                     |
+| Maven                                          | Realizar o gerenciamento de dependências.                                                                                                                            | -                                     |
+| Liquibase                                      | Gerenciar mudanças no banco de dados, destacando quais colunas, tabelas, views, restriçoes etc foram removidas, alteradas ou adicionadas.                            | ```src/main/resources/db/changelog``` |
+| Docker                                         | Virtualizar o contêiner do banco de dados PostgreSQL.                                                                                                                | ``` docker-compose.yml```             | 
 
 ## Diagrama Lógico de Dados
 
@@ -49,4 +49,4 @@ Enfim, execute o projeto:
 mvn spring-boot:run
 ```
 
-(Obs: Manipualação do maven pode ser facilitada ao se utilizar um IDE como IntelliJ ou Eclipse.)
+(Obs: Manipualação do maven e execução podem ser facilitadas ao se utilizar um IDE como IntelliJ ou Eclipse.)
